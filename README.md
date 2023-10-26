@@ -5,3 +5,10 @@ For this project, you will be recreating the Juicebox API from scratch with the 
 ## Submission
 
 Please submit a link to your Github repo.
+
+## How to Run the App
+
+To just run the build + server, run:
+`npm run dev`
+
+This will rebuild the React files whenever they change, and keep the server running as well, restarting if the server changes.
