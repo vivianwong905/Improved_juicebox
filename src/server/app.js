@@ -10,12 +10,14 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res, next) => {
-    try {
-        res.send("Hello Express App");
-    } catch (error) {
-        next(error);
-    }
+app.use(express.static(path.join(__dirname, '../../dist')))
+
+app.get("/hello", (req, res) => {
+  res.send("Hello Vite + React!");
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'));
 })
 
 // Error handling middleware
