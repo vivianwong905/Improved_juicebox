@@ -17,7 +17,7 @@ describe('GET /api/users', () => {
 
         const response = await request(app).get('/api/users');
         console.log(response.body.users, "user respnoengiengg");
-        // expect(response.body.users[0]).toEqual(users[0]);
+        expect(response.body.users[0]).toEqual(users[0]);
     });
 
     

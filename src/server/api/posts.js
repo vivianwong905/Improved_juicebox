@@ -3,7 +3,6 @@ const postsRouter = express.Router();
 
 const prisma = require('../../../client');
 
-
 const { requireUser } = require('./utils');
 
 //get all posts
