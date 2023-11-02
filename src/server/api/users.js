@@ -1,8 +1,6 @@
 const express = require('express');
 
-const { PrismaClient } = require('@prisma/client');
-
-const prisma = new PrismaClient();
+const prisma = require('../../../client');
 
 const usersRouter = express.Router();
 const jwt = require('jsonwebtoken');
@@ -20,7 +18,7 @@ usersRouter.get('/', async (req, res, next) => {
         res.send({users});
     } catch(e) {
         console.error(e);
-    }
+    } next();
 })
 
 // GET /api/users/:id
@@ -35,7 +33,7 @@ usersRouter.get('/:id', async (req, res, next) => {
         res.send({user});
     } catch(e) {
         console.error(e);
-    }
+    } next();
 })
 
 

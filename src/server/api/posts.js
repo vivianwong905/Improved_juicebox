@@ -1,9 +1,7 @@
 const express = require('express');
 const postsRouter = express.Router();
 
-const { PrismaClient } = require('@prisma/client');
-
-const prisma = new PrismaClient();
+const prisma = require('../../../client');
 
 
 const { requireUser } = require('./utils');
@@ -15,7 +13,7 @@ postsRouter.get('/', async (req, res, next) => {
         res.send({posts});
     } catch(e) {
         console.error(e);
-    }
+    } next();
 });
 
 //get one post
