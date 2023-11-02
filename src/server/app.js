@@ -1,7 +1,10 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
+const jwt = require("jsonwebtoken");
 
 // Logging middleware
 app.use(morgan("dev"));
@@ -15,6 +18,11 @@ app.use(express.static(path.join(__dirname, '../../dist')))
 app.get("/hello", (req, res) => {
   res.send("Hello Vite + React!");
 });
+
+//backend routes
+const apiRouter = require("../server/api");
+app.use('/api', apiRouter);
+// app.use('/auth', require('./auth'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../dist/index.html'));
