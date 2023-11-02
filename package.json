@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.1.0",
+    "jest": "^29.7.0",
+    "jest-mock-extended": "^2.0.4",
     "nodemon": "^3.0.1",
     "prisma": "^5.5.2",
     "vite": "^4.5.0"
