@@ -1,10 +1,9 @@
 /* global jest, beforeEach */
-const { mockDeep, mockReset } = require('jest-mock-extended')
+const { mockDeep, mockReset } = require('jest-mock-extended');
+const prisma = require('../../../client');
+const prismaMock = prisma;
 
-const prisma = require('../client')
-const prismaMock = prisma
-
-jest.mock('../client', () => mockDeep())
+jest.mock('../../../client', () => mockDeep())
 
 beforeEach(() => {
   mockReset(prismaMock)

@@ -4,7 +4,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-const jwt = require("jsonwebtoken");
+
 
 // Logging middleware
 app.use(morgan("dev"));
